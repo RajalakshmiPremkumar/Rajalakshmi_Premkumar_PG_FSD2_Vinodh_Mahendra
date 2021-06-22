@@ -1,0 +1,13 @@
+
+body {background-color: powderblue;}
+	th{color:blue; size:7;}
+	td  {color: blue;}
+	h1 {color:blue;}
+	h2 {color:blue;}
+
+
+th, td {
+padding: 15px;
+ text-align: left;
+}
+

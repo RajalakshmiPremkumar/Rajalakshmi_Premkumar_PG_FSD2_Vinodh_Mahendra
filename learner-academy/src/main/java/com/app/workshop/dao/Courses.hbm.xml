@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.app.workshop.model.Courses" table="courses">
+
+		<id name="courseId" type="int">
+			<column name="courseId" />
+			<generator class="identity" />
+		</id>
+				<property name="courseName" type="java.lang.String" unique="true">
+			<column name="courseName" />
+		</property>
+
+
+        
+	<set name="subjects" table="subject_courses" inverse="true" >
+            <key>
+                <column name="courseId" not-null="true" />
+            </key>
+            <many-to-many column="subjectId" class="com.app.workshop.model.Subjects" />
+        </set>
+
+	</class>
+
+</hibernate-mapping>
